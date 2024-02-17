@@ -25,6 +25,10 @@ iframe {
     height: calc(100vh - 30px);
   }
 
+  #frame-chat {
+    width: calc(100vw - 60px - 300px);
+  }
+
   .wrapper {
     display: flex;
   }
