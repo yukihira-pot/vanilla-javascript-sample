@@ -45,7 +45,7 @@ input:focus + #search-label {
 
 .user-description__container p {
   margin: 10px 10px 0 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: rgb(60, 60, 60);
 }
@@ -55,6 +55,10 @@ input:focus + #search-label {
   align-items: center;
   margin: 15px 15px 0 0;
   cursor: pointer;
+}
+
+.user-description:hover {
+  background-color: rgb(240, 240, 240);
 }
 
 .user-description img {
