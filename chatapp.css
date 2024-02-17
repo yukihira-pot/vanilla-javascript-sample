@@ -1,0 +1,18 @@
+@media (700px <= width) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    gap: 20px;
+  }
+
+  .navbar-container {
+    grid-column: col-start / span 1;
+  }
+
+  .sidebar-container {
+    grid-column: col-start 2 / span 2;
+  }
+  .chat-container {
+    grid-column: col-start 5 / span 3;
+  }
+}
