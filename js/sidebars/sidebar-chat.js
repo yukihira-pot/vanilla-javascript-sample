@@ -76,6 +76,13 @@ class ChatList {
     const submit = document.createElement("i");
     submit.className = "fa-solid fa-paper-plane fa-lg";
 
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submit.click();
+      }
+    });
+
     submit.addEventListener("click", () => {
       const chatInput = chatFrame.contentDocument.getElementById("chat-input");
       const chatContainer =

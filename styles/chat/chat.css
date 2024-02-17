@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+#chat-container {
+  padding-bottom: 120px;
+}
+
 .chat-element {
   display: flex;
   align-items: center;
