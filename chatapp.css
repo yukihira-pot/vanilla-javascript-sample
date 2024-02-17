@@ -17,6 +17,10 @@ iframe {
     background-color: rgb(240, 240, 240);
   }
 
+  iframe {
+    height: calc(100vh - 30px);
+  }
+
   .wrapper {
     display: flex;
   }
@@ -24,7 +28,7 @@ iframe {
   .navbar,
   .sidebar,
   .chat {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 30px);
   }
 
   .navbar-icon__container {
