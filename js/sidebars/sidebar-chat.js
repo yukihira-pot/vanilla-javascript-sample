@@ -76,6 +76,48 @@ class ChatList {
     const submit = document.createElement("i");
     submit.className = "fa-solid fa-paper-plane fa-lg";
 
+    submit.addEventListener("click", () => {
+      const chatInput = chatFrame.contentDocument.getElementById("chat-input");
+      const chatContainer =
+        chatFrame.contentDocument.getElementById("chat-container");
+
+      const chat = {
+        senderId: this.myId,
+        senderName: "",
+        receiverId: null,
+        receiverName: "",
+        content: chatInput.value,
+        createdAt: new Date(),
+      };
+
+      this.appendChat(chat);
+
+      let chatDiv = document.createElement("div");
+      chatDiv.className = "chat-element chat-element__mine";
+
+      let chatContent = document.createElement("div");
+      chatContent.classList.add("chat-element__content");
+
+      let message = document.createElement("div");
+      message.classList.add("chat-element__message");
+      message.classList.add("chat-element__mine");
+
+      message.textContent = chat.content;
+
+      let createdAt = document.createElement("div");
+      createdAt.classList.add("chat-element__created-at");
+
+      createdAt.textContent = new Date(chat.createdAt).toLocaleString();
+
+      chatDiv.appendChild(createdAt);
+      chatContent.appendChild(message);
+      chatDiv.appendChild(chatContent);
+
+      chatContainer.appendChild(chatDiv);
+
+      chatInput.value = "";
+    });
+
     form.appendChild(input);
     form.appendChild(submit);
 
