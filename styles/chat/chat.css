@@ -30,7 +30,7 @@
   position: relative;
   padding: 12px;
   padding-top: 11px;
-  background-color: rgb(75, 185, 75);
+  background-color: rgb(100, 200, 100);
   border-radius: 15px;
 }
 
@@ -54,7 +54,7 @@
   transform: rotate(-45deg);
   left: -15px;
   bottom: 10px;
-  border-left: 25px solid rgb(75, 185, 75);
+  border-left: 25px solid rgb(100, 200, 100);
   border-top: 25px solid transparent;
   border-right: 25px solid transparent;
   border-bottom: 25px solid transparent;
