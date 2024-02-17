@@ -118,9 +118,6 @@ class ChatList {
       for (let chat of chats) {
         let chatDiv = document.createElement("div");
         chatDiv.className = "chat-element";
-        if (chat.senderId === this.myId) {
-          chatDiv.classList.add("chat-element__mine");
-        }
 
         let img = document.createElement("img");
         img.src = chat.senderImgSrc;
@@ -128,7 +125,14 @@ class ChatList {
 
         let chatContent = document.createElement("div");
         chatContent.classList.add("chat-element__content");
-        chatContent.textContent = chat.content;
+
+        let message = document.createElement("div");
+        message.classList.add("chat-element__message");
+        if (chat.senderId === this.myId) {
+          chatDiv.classList.add("chat-element__mine");
+          message.classList.add("chat-element__mine");
+        }
+        message.textContent = chat.content;
 
         let createdAt = document.createElement("div");
         createdAt.classList.add("chat-element__created-at");
@@ -138,12 +142,19 @@ class ChatList {
         name.classList.add("chat-element__name");
         name.textContent = chat.senderName;
 
+        if (chat.senderId === this.myId) {
+          chatDiv.appendChild(createdAt);
+        }
+
         if (chat.senderId !== this.myId) {
           chatDiv.appendChild(img);
-          chatDiv.appendChild(name);
+          chatContent.appendChild(name);
         }
+        chatContent.appendChild(message);
         chatDiv.appendChild(chatContent);
-        chatDiv.appendChild(createdAt);
+        if (chat.senderId !== this.myId) {
+          chatDiv.appendChild(createdAt);
+        }
         chatContainer.appendChild(chatDiv);
       }
     });
