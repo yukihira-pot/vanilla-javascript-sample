@@ -8,7 +8,12 @@ iframe {
 }
 
 .sidebar iframe {
-  border-right: solid 1px rgb(240, 240, 240);
+  border-right: solid 2px rgb(240, 240, 240);
+  display: none;
+}
+
+.sidebar iframe.active {
+  display: block;
 }
 
 @media (700px <= width) {
@@ -22,7 +27,7 @@ iframe {
   }
 
   iframe {
-    height: calc(100vh - 30px);
+    height: calc(100vh - 40px);
   }
 
   #frame-chat {
@@ -33,7 +38,10 @@ iframe {
     display: flex;
   }
 
-  .navbar,
+  .navbar {
+    height: calc(100vh - 30px);
+  }
+
   .sidebar,
   .chat {
     height: calc(100vh - 30px);
