@@ -68,14 +68,13 @@ class ChatList {
     const form = document.createElement("form");
     form.id = "chat-form";
 
-    const input = document.createElement("input");
+    const input = document.createElement("textarea");
     input.id = "chat-input";
     input.className = "chat-input";
-    input.type = "text";
     input.placeholder = "メッセージを入力してください";
 
     const submit = document.createElement("i");
-    submit.className = "fa-solid fa-paper-plane";
+    submit.className = "fa-solid fa-paper-plane fa-lg";
 
     form.appendChild(input);
     form.appendChild(submit);
