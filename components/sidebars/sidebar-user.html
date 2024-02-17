@@ -14,7 +14,12 @@
   <body>
     <header>
       <form>
-        <input type="text" placeholder="&#xf002; 名前で検索" />
+        <form>
+          <input type="text" id="search-input" />
+          <label for="search-input" id="search-label"
+            >&#xf002; 名前で検索</label
+          >
+        </form>
       </form>
     </header>
     <section class="user-description__container">
@@ -25,5 +30,6 @@
         <div class="user-description__name">ユーザー名</div>
       </div>
     </section>
+    <script src="../../js/sidebars/sidebar-user.js"></script>
   </body>
 </html>
