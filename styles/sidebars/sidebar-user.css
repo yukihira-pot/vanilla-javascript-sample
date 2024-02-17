@@ -1,10 +1,9 @@
 body {
   border: solid 2px black;
-  padding: 20px;
 }
 
 header {
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 form {
@@ -44,7 +43,8 @@ input:focus + #search-label {
 }
 
 .user-description__container p {
-  margin: 10px 10px 0 0;
+  margin: 20px 20px 0 0;
+  padding: 0 0 0 10px;
   font-size: 14px;
   font-weight: 500;
   color: rgb(60, 60, 60);
@@ -53,7 +53,8 @@ input:focus + #search-label {
 .user-description {
   display: flex;
   align-items: center;
-  margin: 15px 15px 0 0;
+  height: 70px;
+  padding: 20px;
   cursor: pointer;
 }
 
