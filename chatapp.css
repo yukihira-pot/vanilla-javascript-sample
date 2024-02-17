@@ -5,6 +5,7 @@
 
 iframe {
   border: none;
+  border-right: solid 1px rgb(240, 240, 240);
 }
 
 @media (700px <= width) {
