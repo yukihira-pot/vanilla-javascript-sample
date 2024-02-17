@@ -3,6 +3,12 @@ class ChatList {
     this.filePath = filePath;
     this.myId = myId;
     this.chatList = [];
+    this.readChatListFromFile().then(() => {
+      let latestChats = this.generateLatestChatDescriptions();
+      for (let chat of latestChats) {
+        this.generateChatByCounterpartId(chat.counterPartId);
+      }
+    });
   }
 
   async readChatListFromFile() {
@@ -24,6 +30,8 @@ class ChatList {
       if (!latestChats[id] || chat.createdAt > latestChats[id].createdAt) {
         latestChats[id] = chat;
         latestChats[id].name = name;
+        latestChats[id].counterPartId =
+          chat.senderId === this.myId ? chat.receiverId : chat.senderId;
       }
     }
     let latestChatByEachUserSorted = Object.values(latestChats);
@@ -61,6 +69,8 @@ class ChatList {
       chatDiv.id = `chat-${chat.id}`;
       chatDiv.className = "chat-description";
 
+      this.generateChatByCounterpartId(chat.counterPartId, chatDiv);
+
       const img = document.createElement("img");
       img.src = chat.senderImgSrc;
 
@@ -92,12 +102,52 @@ class ChatList {
 
       container.appendChild(chatDiv);
     });
+
+    return latestChats;
+  }
+
+  generateChatByCounterpartId(counterPartId, latestChatDiv) {
+    let chatsFrame = parent.document.getElementById("frame-chat");
+    let chatContainer =
+      chatsFrame.contentDocument.getElementById("chat-container");
+
+    latestChatDiv.addEventListener("click", () => {
+      chatContainer.innerHTML = "";
+      let chatsByUsers = this.getChatsByUsers();
+      let chats = chatsByUsers[counterPartId];
+      for (let chat of chats) {
+        let chatDiv = document.createElement("div");
+        chatDiv.className = "chat-element";
+        if (chat.senderId === this.myId) {
+          chatDiv.classList.add("chat-element__mine");
+        }
+
+        let img = document.createElement("img");
+        img.src = chat.senderImgSrc;
+        img.className = "chat-element__img";
+
+        let chatContent = document.createElement("div");
+        chatContent.classList.add("chat-element__content");
+        chatContent.textContent = chat.content;
+
+        let createdAt = document.createElement("div");
+        createdAt.classList.add("chat-element__created-at");
+        createdAt.textContent = new Date(chat.createdAt).toLocaleString();
+
+        let name = document.createElement("div");
+        name.classList.add("chat-element__name");
+        name.textContent = chat.senderName;
+
+        if (chat.senderId !== this.myId) {
+          chatDiv.appendChild(img);
+          chatDiv.appendChild(name);
+        }
+        chatDiv.appendChild(chatContent);
+        chatDiv.appendChild(createdAt);
+        chatContainer.appendChild(chatDiv);
+      }
+    });
   }
 }
 
 let chatList = new ChatList("../../data/sidebars/sidebar-chat.json", 1);
-chatList.readChatListFromFile().then(() => {
-  console.log(chatList.chatList);
-  console.log("getlatestchat", chatList.getLatestChatByUsers());
-  chatList.generateLatestChatDescriptions();
-});
