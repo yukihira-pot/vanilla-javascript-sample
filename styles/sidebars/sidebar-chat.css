@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+.chat-description {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chat-description:hover {
+  background-color: #f5f5f5;
+}
+
+.chat-description img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.chat-description__content {
+  padding: 10px;
+}
+
+.chat-description__name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chat-description__message {
+  font-size: 14px;
+  color: #656565;
+}
+
+.chat-description__created-at {
+  font-size: 10px;
+  color: #8e8e8e;
+  align-self: start;
+  margin-top: 5px;
+}
