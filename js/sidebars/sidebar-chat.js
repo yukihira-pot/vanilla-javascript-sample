@@ -57,6 +57,32 @@ class ChatList {
     return chatsByUsers;
   }
 
+  generateForm() {
+    const chatFrame = parent.document.getElementById("frame-chat");
+    const chatFormContainer = chatFrame.contentDocument.getElementById(
+      "chat-form__container"
+    );
+
+    chatFormContainer.innerHTML = "";
+
+    const form = document.createElement("form");
+    form.id = "chat-form";
+
+    const input = document.createElement("input");
+    input.id = "chat-input";
+    input.className = "chat-input";
+    input.type = "text";
+    input.placeholder = "メッセージを入力してください";
+
+    const submit = document.createElement("i");
+    submit.className = "fa-solid fa-paper-plane";
+
+    form.appendChild(input);
+    form.appendChild(submit);
+
+    chatFormContainer.appendChild(form);
+  }
+
   generateLatestChatDescriptions() {
     const container = document.querySelector(
       ".latest-chat-description__container"
@@ -155,8 +181,11 @@ class ChatList {
         if (chat.senderId !== this.myId) {
           chatDiv.appendChild(createdAt);
         }
+
         chatContainer.appendChild(chatDiv);
       }
+
+      this.generateForm();
     });
   }
 }
