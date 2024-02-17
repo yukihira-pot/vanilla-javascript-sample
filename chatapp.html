@@ -18,13 +18,24 @@
     <main class="wrapper">
       <section class="navbar">
         <div class="navbar-icon__container">
-          <i class="fa-solid fa-user fa-lg"></i>
-          <i class="fa-solid fa-comment fa-lg"></i>
-          <i class="fa-solid fa-user-plus fa-lg"></i>
+          <i class="fa-solid fa-user fa-lg attr-user active"></i>
+          <i class="fa-solid fa-comment fa-lg attr-chat"></i>
+          <i class="fa-solid fa-user-plus fa-lg attr-add-friend"></i>
         </div>
       </section>
       <section class="sidebar">
-        <iframe src="./components/sidebars/sidebar-user.html"></iframe>
+        <iframe
+          src="./components/sidebars/sidebar-user.html"
+          class="frame-sidebar-user attr-user"
+        ></iframe>
+        <iframe
+          src="./components/sidebars/sidebar-chat.html"
+          class="frame-sidebar-chat attr-chat"
+        ></iframe>
+        <iframe
+          src="./components/sidebars/sidebar-add-friend.html"
+          class="frame-sidebar-add-friend attr-add-friend"
+        ></iframe>
       </section>
       <section class="chat">
         <div class="chat-header">header</div>
