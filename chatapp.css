@@ -3,12 +3,16 @@
   box-sizing: border-box;
 }
 
+iframe {
+  border: none;
+}
+
 @media (700px <= width) {
   .header {
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     color: rgb(50, 50, 50);
     background-color: rgb(240, 240, 240);
   }
@@ -51,6 +55,6 @@
   }
 
   .sidebar {
-    width: 200px;
+    width: 300px;
   }
 }
