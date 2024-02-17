@@ -42,6 +42,7 @@
   background-color: rgb(195, 195, 195);
   border-radius: 15px;
   font-size: 15px;
+  word-wrap: break-word;
 }
 
 /* 色付きの半円 */
@@ -126,7 +127,7 @@
 
 #chat-form__container {
   position: fixed;
-  bottom: 0;
+  bottom: -5px;
   width: 100%;
 }
 
