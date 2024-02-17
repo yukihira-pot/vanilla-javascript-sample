@@ -3,21 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.5.0/css/all.css"
+    />
     <link rel="stylesheet" href="./chatapp.css" />
     <title>ChatApp</title>
   </head>
+
   <body>
+    <section class="header">
+      <div class="header-title">ChatApp</div>
+    </section>
     <main class="wrapper">
-      <section class="navbar-container">navbar</section>
-      <section class="sidebar-container">
+      <section class="navbar">
+        <div class="navbar-icon__container">
+          <i class="fa-solid fa-user fa-lg"></i>
+          <i class="fa-solid fa-comment fa-lg"></i>
+          <i class="fa-solid fa-user-plus fa-lg"></i>
+        </div>
+      </section>
+      <section class="sidebar">
         <div class="sidebar-header">header</div>
         <div class="sidebar-list">list</div>
       </section>
-      <section class="chat-container">
+      <section class="chat">
         <div class="chat-header">header</div>
         <div class="chat-list">list</div>
         <div class="chat-form">form</div>
       </section>
     </main>
+    <script src="./chatapp.js"></script>
   </body>
 </html>
