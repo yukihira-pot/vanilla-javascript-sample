@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "imgSrc": "https://fastly.picsum.photos/id/323/200/300.jpg?hmac=A2QFYssQ9fNCK_5aWqeo370SEmDX33jJZRSSpkdjFLg",
+    "userName": "武者小路 実篤",
+    "isMyself": true
+  },
+  {
+    "id": 2,
+    "imgSrc": "https://fastly.picsum.photos/id/821/200/300.jpg?hmac=-CLZlHMcIt8hXlUFZ4-3AvLYDsUJSwUeTri-zHDlnoA",
+    "userName": "武者小路 実篤",
+    "isMyself": false
+  },
+  {
+    "id": 3,
+    "imgSrc": "https://fastly.picsum.photos/id/219/300/300.jpg?hmac=dmonesrXdE-9PMrYQcQn9va1iu5a_0p4wGyhw93QSSA",
+    "userName": "武者小路 実篤",
+    "isMyself": false
+  },
+  {
+    "id": 4,
+    "imgSrc": "https://fastly.picsum.photos/id/590/300/300.jpg?hmac=TwfWFUxf1M4Z0breCFYpLRzuF-eIeeNSFqFScqH3r6s",
+    "userName": "武者小路 実篤",
+    "isMyself": false
+  }
+]
