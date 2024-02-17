@@ -79,7 +79,9 @@ class ChatList {
     input.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
         event.preventDefault();
-        submit.click();
+        if (input.value.trim() !== "") {
+          submit.click();
+        }
       }
     });
 
