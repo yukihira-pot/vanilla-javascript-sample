@@ -1,5 +1,5 @@
 const icons = document.querySelectorAll(".navbar-icon__container i");
-const iframes = document.querySelectorAll("iframe");
+const iframes = document.querySelectorAll(".sidebar iframe");
 
 icons.forEach((icon) => {
   icon.addEventListener("click", function () {

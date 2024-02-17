@@ -5,6 +5,9 @@
 
 iframe {
   border: none;
+}
+
+.sidebar iframe {
   border-right: solid 1px rgb(240, 240, 240);
 }
 
