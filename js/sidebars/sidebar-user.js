@@ -7,13 +7,13 @@ function generateUserDescriptions(jsonUrl, containerSelector, fetchCondition) {
       users.forEach((user) => {
         if (fetchCondition(user)) {
           const userDiv = document.createElement("div");
+          userDiv.id = `user-${user.id}`;
           userDiv.className = "user-description";
 
           const img = document.createElement("img");
           img.src = user.imgSrc;
 
           const nameDiv = document.createElement("div");
-          nameDiv.id = `user-${user.id}`;
           nameDiv.textContent = user.userName;
 
           userDiv.appendChild(img);
