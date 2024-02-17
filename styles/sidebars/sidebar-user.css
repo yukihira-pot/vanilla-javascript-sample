@@ -1,9 +1,10 @@
 body {
   border: solid 2px black;
+  padding: 20px;
 }
 
 header {
-  padding: 20px;
+  padding-bottom: 20px;
 }
 
 form {
@@ -42,6 +43,23 @@ input:focus + #search-label {
   color: rgb(60, 60, 60);
 }
 
+.user-description__container p {
+  margin: 10px 10px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(60, 60, 60);
+}
+
 .user-description {
   display: flex;
+  align-items: center;
+  margin: 15px 15px 0 0;
+  cursor: pointer;
+}
+
+.user-description img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
