@@ -1,3 +1,25 @@
 body {
   border: solid 2px black;
 }
+
+header {
+  padding: 20px;
+}
+
+form input {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  background-color: rgb(240, 240, 240);
+  font-family: "FontAwesome";
+}
+
+form input:focus {
+  outline: none;
+}
+
+.user-description {
+  display: flex;
+}
