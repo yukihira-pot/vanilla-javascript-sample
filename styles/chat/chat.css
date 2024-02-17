@@ -1,10 +1,123 @@
-.chat-element__mine {
-  background-color: red;
+* {
+  margin: 0;
+}
+
+.chat-element {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 15px 15px 0 0;
+  margin-right: 50px;
+}
+
+.chat-element:not(.chat-element__mine) {
+  justify-content: start;
+  margin-right: 0;
+  margin-left: 20px;
 }
 
 .chat-element__img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.chat-element__message:not(.chat-element__mine) {
+  width: 250px;
+  position: relative;
+  padding: 12px;
+  padding-top: 11px;
+  background-color: rgb(75, 185, 75);
+  border-radius: 15px;
+}
+
+.chat-element__message {
+  width: 250px;
+  position: relative;
+  padding: 10px;
+  background-color: rgb(195, 195, 195);
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+/* 色付きの半円 */
+.chat-element__message:not(.chat-element__mine)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
   border-radius: 50%;
-  margin-right: 10px;
+  transform: rotate(-45deg);
+  left: -15px;
+  bottom: 10px;
+  border-left: 25px solid rgb(75, 185, 75);
+  border-top: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+.chat-element__message::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  right: -15px;
+  bottom: 10px;
+  border-left: 25px solid transparent;
+  border-top: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid rgb(195, 195, 195);
+}
+
+/* 白い半円 */
+.chat-element__message:not(.chat-element__mine)::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  left: -25px;
+  bottom: 25px;
+  border-left: 25px solid white;
+  border-top: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+.chat-element__message::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  right: -25px;
+  bottom: 25px;
+  border-left: 25px solid transparent;
+  border-top: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid white;
+}
+
+.chat-element__name {
+  font-size: 12px;
+  color: rgb(100, 100, 100);
+  margin-bottom: 5px;
+}
+
+.chat-element__created-at {
+  align-self: flex-end;
+  font-size: 12px;
+  color: rgb(150, 150, 150);
+  padding: 10px;
+  margin-top: 5px;
 }
