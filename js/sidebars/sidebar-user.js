@@ -1,4 +1,5 @@
 function generateUserDescriptions(jsonUrl, containerSelector, fetchCondition) {
+  "use strict";
   fetch(jsonUrl)
     .then((response) => response.json())
     .then((users) => {
