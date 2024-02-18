@@ -4,10 +4,7 @@ class ChatList {
     this.myId = myId;
     this.chatList = [];
     this.readChatListFromFile().then(() => {
-      let latestChats = this.generateLatestChatDescriptions();
-      for (let chat of latestChats) {
-        this.generateChatByCounterpartId(chat.counterPartId);
-      }
+      this.generateLatestChatDescriptions();
     });
   }
 
@@ -159,7 +156,6 @@ class ChatList {
 
       const messageDiv = document.createElement("div");
       messageDiv.classList.add("chat-description__message");
-      //   messageDiv.textContent = chat.content;
       messageDiv.textContent =
         chat.content.length > 10
           ? chat.content.slice(0, 10) + "..."
@@ -204,10 +200,6 @@ class ChatList {
 
         let message = document.createElement("div");
         message.classList.add("chat-element__message");
-        if (chat.senderId === this.myId) {
-          chatDiv.classList.add("chat-element__mine");
-          message.classList.add("chat-element__mine");
-        }
         message.textContent = chat.content;
 
         let createdAt = document.createElement("div");
@@ -219,16 +211,16 @@ class ChatList {
         name.textContent = chat.senderName;
 
         if (chat.senderId === this.myId) {
+          chatDiv.classList.add("chat-element__mine");
+          message.classList.add("chat-element__mine");
           chatDiv.appendChild(createdAt);
-        }
-
-        if (chat.senderId !== this.myId) {
+          chatContent.appendChild(message);
+          chatDiv.appendChild(chatContent);
+        } else {
           chatDiv.appendChild(img);
           chatContent.appendChild(name);
-        }
-        chatContent.appendChild(message);
-        chatDiv.appendChild(chatContent);
-        if (chat.senderId !== this.myId) {
+          chatContent.appendChild(message);
+          chatDiv.appendChild(chatContent);
           chatDiv.appendChild(createdAt);
         }
 
